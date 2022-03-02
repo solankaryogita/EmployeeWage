@@ -8,35 +8,37 @@ public class Employee
 	
 	public static void main(String[] args)
 	{
-		int workingHours;
+	      int workingHours;
 	      int Employeewag;
 	      System.out.println("Welcome to Employee Wages");
 	        
-	     int randomVal = (int)Math.floor(Math.random()*10) %3;
+	     int randomVal = (int)Math.floor(Math.random()*10) %4;
 	      
 	     System.out.println("Random value:"+randomVal);
 	   
-	     if(randomVal ==1) 
+	     switch(randomVal)
 	     {
-	    	 
-	           System.out.println("Employee is Present");
-	           workingHours=8;
-	           System.out.println("Working hours :"+workingHours);
-	           Employeewag=workingHours*WAGE_PER_HOURS;
-	           System.out.println("Employeewag is :"+Employeewag);
+	         case 0:  System.out.println("Employee is Absent");
+	                  workingHours=0;
+	                  System.out.println("Working hours :"+workingHours);
+	                  break;
+	         
+	    	 case 1:  System.out.println("Employee is Present");
+	                  workingHours=8;
+	                  System.out.println("Working hours :"+workingHours);
+	                  Employeewag=workingHours*WAGE_PER_HOURS;
+	                  System.out.println("Employeewag is :"+Employeewag);
+	                  break;
+	         
+	    	 case 2:  System.out.println("Employee Working as Part Time");
+	    	          workingHours=4;
+	                  System.out.println("Working hours :"+workingHours);
+	                  Employeewag=workingHours*WAGE_PER_HOURS;
+	                  System.out.println("Employeewag is :"+Employeewag);
+	                  break;
+	        default: System.out.println("End Of The Switch Case");
+	     
 	     }
-	     else if(randomVal==2)
-	     {
-	    	 System.out.println("Employee Working as Part Time");
-	    	 workingHours=4;
-	         System.out.println("Working hours :"+workingHours);
-	         Employeewag=workingHours*WAGE_PER_HOURS;
-	         System.out.println("Employeewag is :"+Employeewag);
-	     }
-	     else {
-	           System.out.println("Employee is Absent");
-	           workingHours=0;
-	           System.out.println("Working hours :"+workingHours);
-	          }
+	     
     }
 }
