@@ -8,11 +8,11 @@ public class Employee
 	
 	public static void main(String[] args)
 	{
-              int workingHours;
+		int workingHours;
 	      int Employeewag;
 	      System.out.println("Welcome to Employee Wages");
 	        
-	     int randomVal = (int)Math.floor(Math.random()*10) %2;
+	     int randomVal = (int)Math.floor(Math.random()*10) %3;
 	      
 	     System.out.println("Random value:"+randomVal);
 	   
@@ -24,6 +24,14 @@ public class Employee
 	           System.out.println("Working hours :"+workingHours);
 	           Employeewag=workingHours*WAGE_PER_HOURS;
 	           System.out.println("Employeewag is :"+Employeewag);
+	     }
+	     else if(randomVal==2)
+	     {
+	    	 System.out.println("Employee Working as Part Time");
+	    	 workingHours=4;
+	         System.out.println("Working hours :"+workingHours);
+	         Employeewag=workingHours*WAGE_PER_HOURS;
+	         System.out.println("Employeewag is :"+Employeewag);
 	     }
 	     else {
 	           System.out.println("Employee is Absent");
