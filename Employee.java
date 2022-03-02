@@ -5,13 +5,17 @@ import java.util.Random;
 public class Employee 
 {
 	static final int WAGE_PER_HOURS =20;
+	static final int EMP_MONTH_DAYS = 20;
 	
 	public static void main(String[] args)
 	{
-	      int workingHours;
-	      int Employeewag;
+	      int workingHours=0;
+	      int Employeewag=0;
+	      int totalworkingdays=1;
+	      int totalEmpWage=0;
 	      System.out.println("Welcome to Employee Wages");
-	        
+	      while(totalworkingdays<20){
+	      
 	     int randomVal = (int)Math.floor(Math.random()*10) %4;
 	      
 	     System.out.println("Random value:"+randomVal);
@@ -26,19 +30,23 @@ public class Employee
 	    	 case 1:  System.out.println("Employee is Present");
 	                  workingHours=8;
 	                  System.out.println("Working hours :"+workingHours);
-	                  Employeewag=workingHours*WAGE_PER_HOURS;
-	                  System.out.println("Employeewag is :"+Employeewag);
+	                  
 	                  break;
 	         
 	    	 case 2:  System.out.println("Employee Working as Part Time");
 	    	          workingHours=4;
 	                  System.out.println("Working hours :"+workingHours);
-	                  Employeewag=workingHours*WAGE_PER_HOURS;
-	                  System.out.println("Employeewag is :"+Employeewag);
+	                  
 	                  break;
 	        default: System.out.println("End Of The Switch Case");
 	     
 	     }
+	           Employeewag= workingHours * WAGE_PER_HOURS;
+	           System.out.println("Employeewag is :"+Employeewag);
+	           totalEmpWage= totalEmpWage+Employeewag;
+	           System.out.println("Total Emp Wage :"+totalEmpWage);
+	           totalworkingdays++;
 	     
+	      }
     }
 }
