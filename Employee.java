@@ -8,9 +8,9 @@ public class Employee
 	static final int EMP_MONTH_DAYS = 20;
 	static final int EMP_MONTH_HOUR = 100;
 	
-	public static void main(String[] args)
+	public void emp()
 	{
-	      int workingHours=0;
+		int workingHours=0;
 	      int Employeewag=0;
 	      int totalworkingdays=1;
 	      int totalEmpWage=0;
@@ -45,10 +45,15 @@ public class Employee
 	        default: System.out.println("End Of The Switch Case");
 	     
 	     }
-	           
+	      
 	           
 	           TotalHour=TotalHour+workingHours;
 	           System.out.println("Total Working Hour is :" +TotalHour);
+	           if(totalworkinghour>100)
+	           {   
+	        	   TotalHour=TotalHour-workingHours;
+	        	   System.out.println("Total Working Hour is :" +TotalHour);
+	           }
 	           Employeewag= workingHours * WAGE_PER_HOURS;
 	           System.out.println("Employeewag is :"+Employeewag);
 	           totalEmpWage= totalEmpWage+Employeewag;
@@ -56,5 +61,11 @@ public class Employee
 	           totalworkingdays++;
 	           totalworkinghour++;
 	      }
+	}
+	public static void main(String[] args)
+	{
+		Employee e = new Employee();
+		e.emp();
     }
+	      
 }
