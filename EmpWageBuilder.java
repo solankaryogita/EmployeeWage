@@ -1,6 +1,6 @@
 package com.Bridgelabz;
 
-public class EmployeeWage9 {
+public class EmpWageBuilder {
 	
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
@@ -9,7 +9,7 @@ public class EmployeeWage9 {
 	private final int numOfWorkingDays;
 	private final int maxHrsPerMonth;
 	
-	public EmployeeWage9(String company, int empRatePerHour, int numOfWorkingDays, int maxHrsPerMonth)
+	public EmpWageBuilder(String company, int empRatePerHour, int numOfWorkingDays, int maxHrsPerMonth)
 	{
 		super();
 		this.company = company;
@@ -18,10 +18,10 @@ public class EmployeeWage9 {
 		this.maxHrsPerMonth = maxHrsPerMonth;
 	}
 	public static void main(String[] args) {
-		EmployeeWage9 emp = new EmployeeWage9("Relince", 20, 2, 10);
+		EmpWageBuilder relience = new EmpWageBuilder("Relince", 20, 2, 10);
 		
 		int empHrs = 0, totalEmpHrs = 0, totalWrkingDays = 0,  totalEmpWage=0;
-		while(totalEmpHrs <= emp.maxHrsPerMonth && totalWrkingDays < emp.numOfWorkingDays)
+		while(totalEmpHrs <= relience.maxHrsPerMonth && totalWrkingDays < relience.numOfWorkingDays)
 		{
 			totalWrkingDays++;
 			int empCheck = (int)Math.floor(Math.random() * 10) %3;
@@ -44,7 +44,7 @@ public class EmployeeWage9 {
 			totalEmpHrs =totalEmpHrs + empHrs;
 			System.out.println("Day#: " + totalWrkingDays + "Emp Hr: " + empHrs);
 		}
-		    totalEmpWage = totalEmpHrs *emp.empRatePerHour;
+		    totalEmpWage = totalEmpHrs *relience.empRatePerHour;
 			System.out.println("totalEmp wage for Company is: "+totalEmpWage);
 	}
 }
