@@ -7,7 +7,7 @@ public class EmployeeWage9 {
 	public static final int NO_OF_WORKING_DAYS= 2;
 	public static final int MAX_HRS_IN_MONTH = 100;
 	
-	public static int calculateempwageforCompany(String company, int empRate, int numOfDays, int maxHrs)
+	public int calculateempwageforCompany(String company, int empRate, int numOfDays, int maxHrs)
 	{
 		int empHrs = 0, totalEmpHrs = 0, totalWrkingDays = 0,  totalEmpWage=0;
 		while(totalEmpHrs <= maxHrs && totalWrkingDays <numOfDays)
@@ -17,8 +17,8 @@ public class EmployeeWage9 {
 			
 			switch(empCheck) 
 			{
-				case 0:  System.out.println("Employee is Absent");
-				break;
+				//case 0:  System.out.println("Employee is Absent");
+				//break;
    
 				case 1:  System.out.println("Employee is Present");
 				empHrs = 8;
@@ -33,13 +33,19 @@ public class EmployeeWage9 {
 			totalEmpHrs =totalEmpHrs + empHrs;
 			System.out.println("Day#: " + totalWrkingDays + "Emp Hr: " + empHrs);
 		}
-			totalEmpWage = totalEmpWage + empRate;
+		    
+			
+			int salary = empHrs * EMP_RATE_PER_HOUR;
+			System.out.println("salary ----------"+salary);
+			totalEmpWage = totalEmpWage+totalEmpHrs *empRate;
 			System.out.println("totalEmp wage for company: " +company+" is: "+totalEmpWage);
 			return totalEmpWage;
 	}
 	public static void main(String[] args) {
-		calculateempwageforCompany("Relince", 20, 3, 10);
+		EmployeeWage9 emp = new EmployeeWage9();
+		EmployeeWage9 emp1 = new EmployeeWage9();
+		emp.calculateempwageforCompany("Relince", 20, 5, 16);
 		System.out.println("-----------------------------------------");
-		calculateempwageforCompany("City Central Mall", 10, 2, 7);
+		emp1.calculateempwageforCompany("City Central Mall", 10, 2, 7);
 	}
 }
