@@ -17,11 +17,10 @@ public class EmpWageBuilder {
 		this.numOfWorkingDays = numOfWorkingDays;
 		this.maxHrsPerMonth = maxHrsPerMonth;
 	}
-	public static void main(String[] args) {
-		EmpWageBuilder relience = new EmpWageBuilder("Relince", 20, 2, 10);
-		
+	private int computeEmpWage()
+	{
 		int empHrs = 0, totalEmpHrs = 0, totalWrkingDays = 0,  totalEmpWage=0;
-		while(totalEmpHrs <= relience.maxHrsPerMonth && totalWrkingDays < relience.numOfWorkingDays)
+		while(totalEmpHrs <= maxHrsPerMonth && totalWrkingDays < numOfWorkingDays)
 		{
 			totalWrkingDays++;
 			int empCheck = (int)Math.floor(Math.random() * 10) %3;
@@ -44,7 +43,18 @@ public class EmpWageBuilder {
 			totalEmpHrs =totalEmpHrs + empHrs;
 			System.out.println("Day#: " + totalWrkingDays + "Emp Hr: " + empHrs);
 		}
-		    totalEmpWage = totalEmpHrs *relience.empRatePerHour;
-			System.out.println("totalEmp wage for Company is: "+totalEmpWage);
+		    totalEmpWage = totalEmpHrs *empRatePerHour;
+			System.out.println("totalEmp wage for Company "+company +" is: "+totalEmpWage);
+			return totalEmpWage;
+	}
+	public static void main(String[] args) {
+		EmpWageBuilder relience = new EmpWageBuilder("Relince", 20, 2, 10);
+		relience.computeEmpWage();
+		System.out.println("-----------------------------------------");
+		EmpWageBuilder ajinkyabazar = new EmpWageBuilder("AjinkyaBazar", 20, 2, 10);
+		ajinkyabazar.computeEmpWage();
+		System.out.println("------------------------------------------");
+		EmpWageBuilder trends = new EmpWageBuilder("Trends", 20, 2, 10);
+		trends.computeEmpWage();
 	}
 }
