@@ -23,6 +23,4 @@ public class Company {
 	void dialyWage(int dailyWage, int total) {
 		this.dailyWage[total] = dailyWage;
 	}
-	
-
 }
